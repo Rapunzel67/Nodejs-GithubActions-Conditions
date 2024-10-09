@@ -2,8 +2,8 @@ name: nodejs App Build
 on: 
  push:
   branches:
-   master
-   dev
+   - master
+   - dev
 jobs:
  test:
   runs-on: ubuntu-latest
