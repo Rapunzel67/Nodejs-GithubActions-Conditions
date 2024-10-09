@@ -5,7 +5,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    continue-on-error:true
     steps:
       - name: clone repo
         uses: actions/checkout@v4
@@ -13,6 +12,7 @@ jobs:
         run: npm ci
       - name: test
         id: test
+        continue-on-error:true
         run: npm run test
       - name: upload report
         if: failure() && steps.test.outcome == 'failure'
