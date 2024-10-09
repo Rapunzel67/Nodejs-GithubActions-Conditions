@@ -1,12 +1,15 @@
-name: nodejs App Build 
-on: 
- push:
-  branches:
-   - master
-   - dev
+name: myAction
+on:
+  push:
+    branches: [master]
 jobs:
- test:
-  runs-on: ubuntu-latest
-  steps:
-   - name: Clone the repo
-     uses: actions/checkout@v4
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone repo
+        uses: actions/checkout@v4
+      - name: install dep
+        run: npm ci
+      - name: test
+        run: npm run test
+    
