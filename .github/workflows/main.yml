@@ -27,10 +27,10 @@ jobs:
         opsys: [ubuntu-latest, windows-latest]
         exclude:
           - node-version: 12
-            operating-system: windows-latest
+            opsys: windows-latest
         include:
           - node-version: 18
-            operating-system: ubuntu-latest  
+            opsys: ubuntu-latest  
     runs-on: ${{matrix.opsys}}
     steps:
       - name: Clone the code 
